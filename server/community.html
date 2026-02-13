@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SafeBite | Community Feed</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+    </div>
+
+    <nav id="mySidebar">
+        <button id="toggle-btn">☰</button>
+        <h1>SafeBite</h1>
+        <a href="index.html"><span>Scanner Dashboard</span></a>
+        <a href="profile.html"><span>Dietary Profile</span></a>
+        <a href="product.html"><span>Safety Analytics</span></a>
+        <a href="substitutes.html"><span>Smart Substitutes</span></a>
+        <a href="community.html"><span>Global Warnings</span></a>
+        
+        <div class="user-info" style="margin-top: auto; font-size: 0.8rem; color: var(--text-light);">
+            User: user
+        </div>
+    </nav>
+
+    <main>
+        <div class="left-col">
+            <section id="feedContainer"> 
+                <div class="badge">LIVE FEED</div>
+                <h2>Community Warning Registry</h2>
+                <p style="color: var(--text-dark); margin-bottom: 30px; opacity: 0.8;">Real-time crowdsourced alerts regarding ingredient discrepancies.</p>
+                
+                <article class="warning-card" style="border-bottom: 1px solid rgba(0,0,0,0.1); padding: 20px 0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="badge" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">HIGH ALERT</span>
+                        <small style="color: var(--text-dark); opacity: 0.6;">2m ago</small>
+                    </div>
+                    <p style="margin: 10px 0;"><strong>@SafeUser123:</strong> Multiple reports of unlisted soy in the latest batch of "Oat Milk Premium".</p>
+                </article>
+            </section>
+        </div>
+
+        <div class="right-col">
+            <aside class="info-card">
+                <h3>Submit an Alert</h3>
+                <p>Found an error in a product label? Help the community stay safe.</p>
+                <button id="newReportBtn">NEW REPORT</button>
+            </aside>
+
+            <div class="info-card" style="border-left: 4px solid var(--accent-green);">
+                <h3>Trust Score</h3>
+                <p style="color: var(--accent-green) !important; font-weight: bold;">✓ 99.8% Reliability</p>
+                <p style="font-size: 0.85rem;">All community reports are cross-checked by our admin team before being flagged.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SafeBite | Scanner Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background">
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+        <span class="ball"></span>
+    </div>
+
+    <nav id="mySidebar">
+        <button id="toggle-btn">☰</button>
+        <h1>SafeBite</h1>
+        <a href="index.html"><span>Scanner Dashboard</span></a>
+        <a href="profile.html"><span>Dietary Profile</span></a>
+        <a href="product.html"><span>Safety Analytics</span></a>
+        <a href="substitutes.html"><span>Smart Substitutes</span></a>
+        <a href="community.html"><span>Global Warnings</span></a>
+        
+        <div class="user-info" style="margin-top: auto; font-size: 0.8rem; color: var(--text-light);">
+            SafeBite Registry v2.1
+        </div>
+    </nav>
+
+    <main>
+        <div class="left-col">
+            <section>
+                <div class="badge">SYSTEM READY</div>
+                <h2>Product Intelligence Scanner</h2>
+                <p style="color: #475569; margin-bottom: 25px;">Cross-reference global ingredients against local safety blacklists.</p>
+                <form onsubmit="event.preventDefault();">
+                    <input type="text" id="productInput" placeholder="Enter Product (e.g. Cow Milk)...">
+                    <button type="button" id="scanBtn" class="primary-btn">EXECUTE ANALYSIS</button>
+                </form>
+                <div id="result-display"></div>
+            </section>
+        </div>
+
+        <div class="right-col">
+            <div style="background: rgba(255,255,255,0.05); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); color: white;">
+                <h3>Status</h3>
+                <p style="font-size: 0.85rem; color: #cbd5e1; line-height: 1.5;">The system is active and monitoring 2M+ ingredient discrepancies in real-time.</p>
+                <div style="display: flex; align-items: center; gap: 8px; margin-top: 15px;">
+                    <div style="width: 10px; height: 10px; border-radius: 50%; background: var(--accent-green);"></div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: var(--accent-green);">LIVE CONNECTION</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
