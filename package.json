@@ -1,0 +1,13 @@
+{
+    "name": "safebite-universal-allergen",
+    "version": "1.0.0",
+    "private": true,
+    "description": "University project web app for allergy and dietary restriction product checks.",
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "firebase-admin": "^13.0.0"
+    },
+    "scripts": {
+        "start": "node server.js"
+    }
+}
