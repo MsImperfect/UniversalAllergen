@@ -377,6 +377,7 @@ function App() {
     const streamRef = useRef(null);
     const detectorRef = useRef(null);
     const frameRef = useRef(null);
+    const resultsRef = useRef(null);
     const firebaseRef = useRef(null);
     const firebaseAuthUnsubscribeRef = useRef(null);
     const profileSyncReadyRef = useRef(false);
@@ -385,6 +386,12 @@ function App() {
     useEffect(() => {
         window.history.replaceState({}, "", route);
     }, []);
+
+    function scrollToResults() {
+        window.requestAnimationFrame(() => {
+            resultsRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    }
 
     useEffect(() => {
         const onPopState = () => {
@@ -691,6 +698,7 @@ function App() {
 
         setLoading("Searching Open Food Facts...");
         setError("");
+        scrollToResults();
 
         try {
             const payload = await apiGet(`/api/search?q=${encodeURIComponent(searchQuery.trim())}`);
@@ -1046,9 +1054,9 @@ function App() {
                         ))}
                     </div>
                 </div>
-                <div className="panel">
+                <div className="panel blacklist-panel">
                     <p className="section-label">Allergy blacklist</p>
-                    <div className="chip-grid">
+                    <div className="chip-grid blacklist-grid">
                         {BLACKLIST_OPTIONS.map((item) => (
                             <button
                                 key={item}
@@ -1060,7 +1068,7 @@ function App() {
                             </button>
                         ))}
                     </div>
-                    <div className="inline-form">
+                    <div className="inline-form blacklist-form">
                         <input
                             type="text"
                             value={customTriggerInput}
@@ -1134,7 +1142,7 @@ function App() {
                         {!scannerActive && <div className="video-placeholder">Live preview appears here.</div>}
                     </div>
                 </div>
-                <div className="panel wide-panel">
+                <div className="panel wide-panel" ref={resultsRef}>
                     <div className="section-mini-header">
                         <p className="section-label">Live results</p>
                         <h2>Products</h2>
